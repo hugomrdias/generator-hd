@@ -1,0 +1,54 @@
+{
+	"name": "<%= moduleName %>",
+	"version": "0.0.0",
+	"description": "<%= moduleDescription %>",
+    "repository": "<%= githubUsername %>/<%= repoName %>",
+    "author": "<%= name %> <<%= email %>> (<%= humanizedWebsite %>)",
+	"license": "MIT",
+    "main": "index.js",
+    <% if (cli) { %>"bin": "cli.js",<% } %>
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+        "test": "nyc ava",
+        "lint": "eslint --cache *.js src/*.js",
+        "validate": "run-p lint test",
+        "precommit": "yarn validate",
+        "version": "yarn changelog && git add CHANGELOG.md",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"<% if (nyc) { %>,
+        "cov": "yarn test && nyc report --reporter=html && hs coverage -s -o -c-1"<% } %><% if (codecov) { %>,
+        "cov:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov"<% } %>
+    },
+	"files": ["index.js"<% if (cli) { %>, "cli.js"<% } %>],
+	"keywords": [<% if (cli) { %>
+		"cli-app",
+		"cli",<% } %>
+		""
+	],
+	"dependencies": {<% if (cli) { %>
+		"meow": "^3.7.0"
+	<% } %>},
+	"devDependencies": {
+		"ava": "^0.20.0",<% if (codecov) { %>
+		"codecov": "^2.3.0",<% } %><% if (nyc) { %>
+        "http-serve": "^1.0.1",
+		"nyc": "^11.0.0",<% } %>
+		"eslint-config-halo": "^2.3.3",
+        "husky": "^0.14.3",
+        "npm-run-all": "^4.1.1"
+	},
+    "eslintConfig": {
+        "extends": "halo/plugins"<% if (cli) { %>,
+        "parserOptions": {
+            "sourceType": "script"
+        }<% } %>
+    },
+    "eslintIgnore": [
+        "node_modules",
+        "coverage",
+        "dist",
+        "storybook-static",
+        "typings"
+    ]
+}
