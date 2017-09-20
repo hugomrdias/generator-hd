@@ -25,7 +25,7 @@
         "test": "eslint ."
     },
     "eslintConfig": {
-        "extends": "halo/plugins",
+        "extends": "halo",
         "parserOptions": {
             "sourceType": "script"
         }
