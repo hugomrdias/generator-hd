@@ -1,12 +1,19 @@
 {
     "name": "generator-hd",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "yo generator for my oss projects",
     "repository": "hugomrdias/generator-hd",
     "license": "MIT",
     "author": "Hugo Dias <hugomrdias@gmail.com> (hugodias.me)",
-    "files": ["generators"],
-    "keywords": ["generator", "yo", "oss", "yeoman-generator"],
+    "files": [
+        "generators"
+    ],
+    "keywords": [
+        "generator",
+        "yo",
+        "oss",
+        "yeoman-generator"
+    ],
     "devDependencies": {
         "eslint-config-halo": "^2.3.5",
         "yeoman-assert": "^3.0.0",
@@ -30,5 +37,7 @@
             "sourceType": "script"
         }
     },
-    "eslintIgnore": ["templates"]
+    "eslintIgnore": [
+        "templates"
+    ]
 }
