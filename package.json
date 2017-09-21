@@ -5,28 +5,21 @@
     "repository": "hugomrdias/generator-hd",
     "license": "MIT",
     "author": "Hugo Dias <hugomrdias@gmail.com> (hugodias.me)",
-    "files": [
-        "generators"
-    ],
-    "keywords": [
-        "generator",
-        "yo",
-        "oss",
-        "yeoman-generator"
-    ],
+    "files": ["generators"],
+    "keywords": ["generator", "yo", "oss", "yeoman-generator"],
     "devDependencies": {
-        "eslint-config-halo": "^2.3.3",
+        "eslint-config-halo": "^2.3.5",
         "yeoman-assert": "^3.0.0",
         "yeoman-test": "^1.6.0"
     },
     "dependencies": {
-        "chalk": "^1.1.3",
+        "chalk": "^2.1.0",
         "humanize-url": "^1.0.1",
         "is-scoped": "^1.0.0",
         "normalize-url": "^1.9.1",
         "superb": "^1.3.0",
         "underscore.string": "^3.3.4",
-        "yeoman-generator": "^1.0.0"
+        "yeoman-generator": "^2.0.0"
     },
     "scripts": {
         "test": "eslint ."
@@ -37,7 +30,5 @@
             "sourceType": "script"
         }
     },
-    "eslintIgnore": [
-        "templates"
-    ]
+    "eslintIgnore": ["templates"]
 }
